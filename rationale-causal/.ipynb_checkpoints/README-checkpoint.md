@@ -1,21 +1,16 @@
 # Towards Trustworthy Explanation: On Causal Rationalization
 
-This repository contains the code for ICML 2023 paper **Towards Trustworthy Explanation: On Causal Rationalization**.
+This repository contains the code for ICML 2023 paper [Towards Trustworthy Explanation: On Causal Rationalization](https://arxiv.org/pdf/2204.11790.pdf).
 
 ## Getting Started
 
-Firstly, create the python environment and activate it
+Firstly, create the python enviroment
 
 ```sh
 conda create --name pytorch_py38 python=3.8
-
-source activate pytorch_py38
 ```
-
-To install the dependencies, run the following command
+To install the dependencies, run following commands
 ```sh
-cd rationale-causal
-
 # Install all python dependencies
 pip install -r requirements.txt
 ```
@@ -37,4 +32,4 @@ Training commands for causal rationalization method:
 ```
 
 ## Acknowledgment
-We thank the authors of [Can Rationalization Improve Robustness?](https://github.com/princeton-nlp/rationale-robustness) for their implementations of the baseline methods
+We thank the authors of [Can Rationalization Improve Robustness?](https://github.com/princeton-nlp/rationale-robustness) for their implementations
