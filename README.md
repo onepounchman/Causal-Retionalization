@@ -30,10 +30,10 @@ Training commands for causal rationalization method:
 
 ```sh
 # real data
-./scripts/beer/run_beer_aroma.sh causalVIB
+./scripts/beer/run_beer_aroma.sh causal-rationale
 
 # synthetic data
-./scripts/beer_noise/run_beer_aroma.sh causalVIB
+./scripts/beer_noise/run_beer_aroma.sh causal-rationale
 ```
 
 ## Acknowledgment
