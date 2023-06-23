@@ -1,6 +1,6 @@
 # Towards Trustworthy Explanation: On Causal Rationalization
 
-This repository contains the code for ICML 2023 paper **Towards Trustworthy Explanation: On Causal Rationalization**.
+This repository contains the code for ICML 2023 paper [Towards Trustworthy Explanation: On Causal Rationalization](https://openreview.net/forum?id=fvTgh4MNUV).
 
 ## Getting Started
 
