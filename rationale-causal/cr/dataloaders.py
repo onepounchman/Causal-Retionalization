@@ -15,13 +15,12 @@ from nltk.tokenize import sent_tokenize
 
 import torch
 from torch.utils.data import Dataset, DataLoader
-from transformers import BertTokenizerFast, RobertaTokenizerFast
+from transformers import BertTokenizerFast
 
 from cr.config import Config
 
 config = Config()
 PRINTABLE = set(string.printable)
-
 
 def get_special_token_map(encoder_type):
     if encoder_type.startswith('roberta'):
@@ -73,7 +72,6 @@ def extract_token_rationales(text, highlight_text, highlight_mode='pos'):
     if not matches:
         return []
     match = matches[0]
-
     spans = [list(match.span(i)) for i in range(1, len(match.groups()) + 1)]
     assert ' '.join(highlight_words) == ' '.join([text[s:e] for s, e in spans])
     return spans
@@ -106,7 +104,6 @@ def get_rationale_vector_from_spans(offsets, span_set):
 def get_fixed_masks(tokenized, tokenizer):
     s_pos = []
     tokens = tokenizer.convert_ids_to_tokens(tokenized['input_ids'][0].tolist())
-
     for pos, token in enumerate(tokens):
         if token in ('[CLS]', '[SEP]'):
             s_pos.append(pos)
@@ -223,7 +220,6 @@ class SentimentDataLoader(BaseDataLoader):
                 elif mode == 'test':
                     path = config.DATA_DIR / f'sentiment/data/target/hotel_Location.train'
                     
-            
             if self.args.dataset_name == 'beer':
                 if scale =='small':
                         if mode in ('train', 'dev'):
@@ -321,7 +317,6 @@ class SentimentDataset(BaseDataset):
 
     def collater(self, batch):
         device = 'cuda' if self.args.use_cuda else 'cpu'
-
         return {
                 'input_ids': torch.tensor([datapoint['input_ids'] for datapoint in batch]).long().to(device),
                 'attention_mask': torch.tensor([datapoint['attention_mask'] for datapoint in batch]).long().to(device),

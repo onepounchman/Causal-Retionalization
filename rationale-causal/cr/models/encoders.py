@@ -9,8 +9,6 @@ from cr.transformer_models.modeling_distilbert import DistilBertModel
 from cr.transformer_models.modeling_roberta import RobertaModel
 
 
-
-
 def get_encoder_model_class(args):
     if args.encoder_type == 'bert-base-uncased':
         return BertModel

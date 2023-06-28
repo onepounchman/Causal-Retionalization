@@ -134,10 +134,7 @@ def train_epoch(seed,epoch, model, dl, optimizer, args,best_path):
                 
                 
                 model.train()
-
-
         args.global_step += 1
-        
     
     return best_path
 
@@ -158,7 +155,6 @@ def main(args):
             str(args.max_length),
             args.batch_size,
         ))
-
 
     if os.path.exists(cached_features_file) and not args.overwrite_cache:
         print("Loading features from cached file:", cached_features_file)
@@ -238,7 +234,7 @@ if __name__ == '__main__':
     parser.add_argument("--disable-ckpt", action="store_true")
 
     # training
-    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--seed", type=int, default=45)
     parser.add_argument("--batch_size", type=int, default=64)
     parser.add_argument("--max_length", type=int, default=300)
     parser.add_argument("--num_epoch", type=int, default=20)

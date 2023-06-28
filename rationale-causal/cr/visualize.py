@@ -8,7 +8,6 @@ import os
 from transformers import BertTokenizerFast
 config = Config()
 
-
 def visualize_rationale(args, batch, batch_idx,output):
         tokenizer = BertTokenizerFast.from_pretrained('bert-base-uncased', cache_dir=args.cache_dir)
         ids = batch['input_ids'].tolist()
@@ -19,7 +18,6 @@ def visualize_rationale(args, batch, batch_idx,output):
         pred_labels = torch.argmax(output['logits'], dim=1).tolist()
         labels = batch['labels'].tolist()
         gold_rationales = batch['rationales'].long().tolist()
-
         text_path = f'{args.best_ckpt_path[:-3]}.txt'.replace('model',args.method+'-vis')
         
         if batch_idx == 0:
