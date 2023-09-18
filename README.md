@@ -1,6 +1,7 @@
 # Towards Trustworthy Explanation: On Causal Rationalization
 
 This repository contains the code for ICML 2023 paper [Towards Trustworthy Explanation: On Causal Rationalization](https://arxiv.org/abs/2306.14115).
+(Notice: we have updated the results of a baseline method folded-rationalisation (FR)) in our most recent version in arxiv)
 
 ## Getting Started
 
